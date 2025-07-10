@@ -1,0 +1,52 @@
+
+//POST para crear alumno:
+localhost:8080/admin/alumnos
+
+//Body para crear un alumno:
+{
+  "rut": "11.111.111-1",
+  "mail": "jon.pear@mail.com",
+  "nombre": "Jon",
+  "apellido": "Pear",
+  "email": "jon.pear@ejemplo.com",
+  "contrasena": "1234Segura",
+  "fecha_nac": "2000-01-01",
+  "activo": "true"
+}
+
+//GET para listar alumnos
+localhost:8080/admin/alumnos
+
+//POST para crear un curso:
+localhost:8080/gestorCursos/cursos
+
+//Body para crear un curso:
+{
+    "sigla": "A1",
+    "nombre": "Programación"
+}
+
+//GET para listar cursos
+localhost:8080/gestorCursos/cursos
+
+//POST para inscribir curso por parte del alumno
+localhost:8080/Alumno/11.111.111-1/inscribir/A1
+
+//POST para crear un instructor
+localhost:8080/gestorCursos/instructores
+//Body para crear un instructor
+{
+  "rut": "9.999.999-9",
+  "nombre": "Juan",
+  "apellido": "Pérez",
+  "email": "juan.perez@ejemplo.com",
+  "contrasena": "1234segura",
+  "especialidad": "Matemáticas",
+  "activo": "true"
+}
+
+//GET para listar instructores
+localhost:8080/gestorCursos/instructores
+
+//POST para asignar un instructor a un curso
+localhost:8080/gestorCursos/9.999.999-9/asignar/A1
