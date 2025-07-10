@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.demo.model.Alumno;
 import com.example.demo.model.Incidencia;
 import com.example.demo.model.Pago;
 import com.example.demo.model.RegistroAlumno;
@@ -22,6 +23,13 @@ import com.example.demo.service.ResenaService;
 public class AlumnoController {
     @Autowired
     private AlumnoService alumnoService;
+
+// Método para registrar un nuevo alumno
+
+    @PostMapping("/crearAlumno")
+    public String almacenar(@RequestBody Alumno alumno) {
+        return alumnoService.registrarAlumno(alumno);
+    }
 
 //Método para crear un registro de alumno ya existente
     @Autowired

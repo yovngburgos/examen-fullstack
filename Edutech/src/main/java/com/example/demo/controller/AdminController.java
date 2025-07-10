@@ -13,6 +13,8 @@ import com.example.demo.model.Alumno;
 import com.example.demo.model.GestorCursos;
 import com.example.demo.model.RegistroAlumno;
 import com.example.demo.dto.AlumnoDTO;
+import com.example.demo.dto.EstadisticasSistemaDTO;
+import com.example.demo.service.AdminService;
 import com.example.demo.service.AlumnoService;
 import com.example.demo.service.GestorCursosService;
 import com.example.demo.service.RegistroAlumnoService;
@@ -58,5 +60,13 @@ public class AdminController {
     @GetMapping("/registros")
     public List<RegistroAlumno> listarRegistros() {
         return registroAlumnoService.listarRegistros();
+    }
+
+    //Método para monitorizar el sistema
+    @Autowired
+    private AdminService adminService;
+    @GetMapping("/monitor")
+    public EstadisticasSistemaDTO monitorizarSistema() {
+        return adminService.monitorizarSistema();
     }
 }

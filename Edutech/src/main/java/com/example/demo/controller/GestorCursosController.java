@@ -23,6 +23,7 @@ import com.example.demo.model.Instructor;
 import com.example.demo.model.Resena;
 import com.example.demo.service.CursoService;
 import com.example.demo.service.EvaluacionService;
+import com.example.demo.service.GestorCursosService;
 import com.example.demo.service.InstructorService;
 import com.example.demo.service.ResenaService;
 
@@ -113,7 +114,13 @@ public class GestorCursosController {
     public String eliminarCurso(@PathVariable String sigla) {
         return cursoService.eliminarCurso(sigla);
     }
-
+// Método para aprobar contenido por ID
+@Autowired
+    private GestorCursosService GestorCursosService;
+    @PostMapping("/contenido/aprobar/{contenidoId}")
+    public String aprobarContenido(@PathVariable int contenidoId) {
+        return GestorCursosService.aprobarContenido(contenidoId);
+    }
 }
 
     
